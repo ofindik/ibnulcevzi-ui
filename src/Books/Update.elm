@@ -1,7 +1,7 @@
 module Books.Update exposing (..)
 
 import Books.Messages exposing (Msg(..))
-import Books.Models exposing (Book, BookId)
+import Books.Models exposing (Book, BookId, BookState(..))
 import Books.Commands exposing (save)
 import Navigation
 
@@ -39,10 +39,10 @@ changeStateCommand bookId books =
                 save
                     { existingBook
                         | state =
-                            (if existingBook.state == "Borrowed" then
-                                "Available"
+                            (if existingBook.state == Borrowed then
+                                Available
                              else
-                                "Borrowed"
+                                Borrowed
                             )
                     }
             else

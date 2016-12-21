@@ -60,7 +60,7 @@ showState : Book -> Html Msg
 showState book =
     div []
         [ h3 [] [ text "State" ]
-        , div [] [ text book.state ]
+        , div [] [ text (toString book.state) ]
         ]
 
 
@@ -73,7 +73,7 @@ changeBookStateButton book =
             ]
             [ i [ class "fa fa-book fa-fw" ] []
             , text
-                (if (book.state == "Available") then
+                (if (book.state == Available) then
                     "Borrow"
                  else
                     "Return"

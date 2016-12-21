@@ -44,7 +44,7 @@ bookRow book =
         [ td [] [ text book.id ]
         , td [] [ text book.name ]
         , td [] [ ul [] (List.map (\a -> li [] [ text a ]) book.authors) ]
-        , td [] [ text book.state ]
+        , td [] [ text (toString book.state) ]
         , td [] [ detailsButton book ]
         ]
 

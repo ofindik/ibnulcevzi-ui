@@ -29,13 +29,26 @@ memberDecoder =
         (field "id" Decode.string)
         (field "name" Decode.string)
         (field "authors" authorsDecoder)
-        (field "state" Decode.string)
+        (field "state" Decode.string |> Decode.andThen stateDecoder)
         (field "history" historyDecoder)
 
 
 authorsDecoder : Decode.Decoder (List String)
 authorsDecoder =
     Decode.list Decode.string
+
+
+stateDecoder : String -> Decode.Decoder BookState
+stateDecoder value =
+    case value of
+        "Available" ->
+            Decode.succeed Available
+
+        "Borrowed" ->
+            Decode.succeed Borrowed
+
+        _ ->
+            Decode.fail "Invalid BookState value !!!"
 
 
 historyDecoder : Decode.Decoder (Maybe (List History))
@@ -81,7 +94,7 @@ memberEncoded book =
         list =
             [ ( "id", Encode.string book.id )
             , ( "name", Encode.string book.name )
-            , ( "state", Encode.string book.state )
+            , ( "state", Encode.string (toString book.state) )
             ]
     in
         list

@@ -9,9 +9,14 @@ type alias Book =
     { id : BookId
     , name : String
     , authors : List String
-    , state : String
+    , state : BookState
     , history : Maybe (List History)
     }
+
+
+type BookState
+    = Available
+    | Borrowed
 
 
 type alias History =
@@ -26,6 +31,6 @@ new =
     { id = "0"
     , name = ""
     , authors = [ "" ]
-    , state = ""
+    , state = Available
     , history = Nothing
     }
