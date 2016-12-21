@@ -1,11 +1,3 @@
-# initial-elm-project
+# ibnulcevzi-ui
 
-After cloning project run
-
-npm install
-
-then run
-
-nf start
-
-Your development environment is ready.
+Front end of Ibnul Cevzi Library Manager.
