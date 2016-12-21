@@ -1,0 +1,68 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "name": "Test Book 1",
+      "authors": [
+        "Test Author 1",
+        "Who Am I"
+      ],
+      "state": "Available",
+      "history": []
+    },
+    {
+      "id": "2",
+      "name": "Test Book 2",
+      "authors": [
+        "Test Author 2"
+      ],
+      "state": "Available",
+      "history": [
+        {
+          "borrower": "Osmanf",
+          "borrowedAt": "Eylul",
+          "returnedAt": "Ekim"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Test Book 3",
+      "authors": [
+        "Test Author 3"
+      ],
+      "state": "Available",
+      "history": []
+    },
+    {
+      "id": "4",
+      "name": "Test Book 4",
+      "authors": [
+        "Test Author 4",
+        "I Am Who"
+      ],
+      "state": "Available",
+      "history": []
+    },
+    {
+      "id": "5",
+      "name": "Test Book 5",
+      "authors": [
+        "Test Author 5"
+      ],
+      "state": "Available",
+      "history": []
+    },
+    {
+      "id": "6",
+      "name": "Test Book 6",
+      "authors": [
+        "Test Author 6",
+        "Ben",
+        "Sen"
+      ],
+      "state": "Available",
+      "history": []
+    }
+  ]
+}
